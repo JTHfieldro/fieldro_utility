@@ -1,0 +1,56 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(fieldro_utility)
+
+add_compile_options(-std=c++17)
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+)
+
+find_package(YAML-CPP REQUIRED)
+
+catkin_package(
+  INCLUDE_DIRS include
+  CATKIN_DEPENDS roscpp
+)
+
+include_directories(
+  include
+  include/helper
+  include/tct_web_socket
+  include/web_socket_base
+  ${catkin_INCLUDE_DIRS}
+  /usr/include  # for nlohmann/json.hpp
+  /usr/include/websocketpp
+)
+
+set(WS_SOURCES
+  src/web_socket_base/web_socket_base.cpp
+  src/web_socket_base/web_socket_base_connect.cpp
+  src/web_socket_base/web_socket_base_comm.cpp
+)
+
+set(HELPER_SOURCES
+  src/helper/logger.cpp
+  src/helper/thread_action_info.cpp
+)
+
+add_executable(tct_web_socket_node
+  ${WS_SOURCES}
+  ${HELPER_SOURCES}
+  src/tct_web_socket/tct_web_socket.cpp
+  src/tct_web_socket/tct_web_socket_comm.cpp
+  src/tct_web_socket/tct_web_socket_connect.cpp
+  src/tct_web_socket/tct_web_socket_state.cpp
+  src/tct_web_socket/tct_web_socket_node.cpp
+)
+
+target_link_libraries(tct_web_socket_node
+  ${catkin_LIBRARIES}
+  yaml-cpp
+  pthread
+)
+
+# 설정 파일 자동 복사
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/config
+     DESTINATION ${CATKIN_DEVEL_PREFIX}/lib/${PROJECT_NAME})
