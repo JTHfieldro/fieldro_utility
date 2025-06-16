@@ -88,7 +88,7 @@ void frb::TctWebSocket::response_message(const std::string& pay_load)
 
     if(response.contains("data") && fn_code_enum == frb::TctFuncCode::GetHardwareStatus)
     {
-      print_hardware_status(response["data"]);
+      
     }
   }
   catch(const std::exception& e)
