@@ -2,7 +2,7 @@
 #include <iostream>
 
 frb::TctWebSocket::TctWebSocket(const std::string& config_path, Logger* logger)
-  : frb::WebSocketBase(config_path, logger), _config_path(config_path)
+  : frb::WebSocketBase(config_path, logger), _config_path(config_path), _hw_status("")
 {
   initialize();
   load_option(config_path);

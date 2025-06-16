@@ -21,6 +21,7 @@ public:
   void control(const std::string& str);
   void        send_message_no_data(const TctFuncCode& function_code);
   bool        send_message(const TctFuncCode& function_code, const nlohmann::json& data);
+  const std::string& get_hw_status() const { return _hw_status; }
 
 private:
   ThreadActionInfo* _thread_info;
@@ -29,6 +30,7 @@ private:
 
   bool           _is_initialization_finish;
   uint32_t       _sequence_number;
+  std::string    _hw_status;
 
   void update();
   void initialize();
@@ -39,7 +41,6 @@ private:
   std::string construct_message(const TctFuncCode& function_code, const nlohmann::json& data);
   std::tuple<frb::TctFuncCode, std::string> parsing_message(const std::string& pay_load);  
 
-  void print_hardware_status(const nlohmann::json& data);
   void change_to_manual_mode();
   void check_hardware_status();
   void check_heartbeat();

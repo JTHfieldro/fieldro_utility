@@ -17,6 +17,7 @@ public:
   void control(const std::string& str);
 
 private:
+  ros::Publisher                 _publish_hw_status;
   ThreadActionInfo*              _thread_info;
   frb::TctWebSocket*             _tct_ws;
   std::map<std::string, int32_t> _command_map;
