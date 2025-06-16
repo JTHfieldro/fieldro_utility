@@ -119,12 +119,3 @@ std::tuple<frb::TctFuncCode, std::string> frb::TctWebSocket::parsing_message(con
   std::string json_str = pay_load.substr(34);
   return std::tuple<frb::TctFuncCode, std::string>(fn_code_enum, json_str);
 }
-
-void frb::TctWebSocket::print_hardware_status(const nlohmann::json& data)
-{
-  for (const auto& [key, val] : data.items())
-  {
-    std::string status = val.get<std::string>();
-    _logger->push_log_format("INFO", "HW", key, status);
-  }
-}
