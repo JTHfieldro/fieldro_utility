@@ -5,9 +5,20 @@ add_compile_options(-std=c++17)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  message_generation
 )
 
 find_package(YAML-CPP REQUIRED)
+
+add_message_files(
+  FILES
+  hw_status.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 catkin_package(
   INCLUDE_DIRS include
@@ -19,6 +30,7 @@ include_directories(
   include/helper
   include/tct_web_socket
   include/web_socket_base
+  include/web_sosocket_manager
   ${catkin_INCLUDE_DIRS}
   /usr/include  # for nlohmann/json.hpp
   /usr/include/websocketpp

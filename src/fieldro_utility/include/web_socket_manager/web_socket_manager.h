@@ -3,6 +3,7 @@
 #include "tct_web_socket.h"
 #include "tct_web_socket_define.h"
 #include "ros_helper.h"
+#include "fieldro_utility/hw_status.h"
 
 namespace frb
 {
@@ -23,7 +24,7 @@ private:
   std::string                    _config_path;
 
   void set_publisher() override;
-  void publish_hw_status();
+  void publish_hw_status(const std::string& status_json);
   void update();
   void change_mode(const frb::TctFuncCodeType& type);
   void update_hw_status();
