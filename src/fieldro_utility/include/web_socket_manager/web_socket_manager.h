@@ -8,7 +8,7 @@
 namespace frb
 {
 
-class WebSocketManager
+class WebSocketManager : public RosHelper
 {
 public:
   WebSocketManager(const std::string& congif_path, frb::Logger* logger);
@@ -23,6 +23,7 @@ private:
   std::map<std::string, int32_t> _command_map;
   std::string                    _config_path;
 
+  void set_subscriber() override;
   void set_publisher() override;
   void publish_hw_status(const std::string& status_json);
   void update();

@@ -29,7 +29,7 @@ void frb::WebSocketManager::change_mode(const frb::TctFuncCodeType& type)
 void frb::WebSocketManager::update_hw_status()
 {
   _tct_ws->send_message_no_data(frb::TctFuncCode::GetHardwareStatus);
-  std::string status = _tct_ws->get_hardware_status();
+  std::string status = _tct_ws->get_hw_status();
   if(!status.empty())
   {
     publish_hw_status(status);
