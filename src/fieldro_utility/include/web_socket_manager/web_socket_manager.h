@@ -1,5 +1,6 @@
 #pragma once
 
+#include <nlohmann/json.hpp>
 #include "tct_web_socket.h"
 #include "tct_web_socket_define.h"
 #include "ros_helper.h"
