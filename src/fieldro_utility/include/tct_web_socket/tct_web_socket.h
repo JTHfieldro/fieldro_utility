@@ -19,6 +19,8 @@ public:
   virtual ~TctWebSocket();
 
   void control(const std::string& str);
+  void        send_message_no_data(const TctFuncCode& function_code);
+  bool        send_message(const TctFuncCode& function_code, const nlohmann::json& data);
 
 private:
   ThreadActionInfo* _thread_info;
@@ -33,13 +35,12 @@ private:
   void initialize_tct_operation();
   void load_option(const std::string& config_path);
 
-  void        send_message_no_data(const TctFuncCode& function_code);
-  bool        send_message(const TctFuncCode& function_code, const nlohmann::json& data);
   void        response_message(const std::string& pay_load);
   std::string construct_message(const TctFuncCode& function_code, const nlohmann::json& data);
   std::tuple<frb::TctFuncCode, std::string> parsing_message(const std::string& pay_load);  
 
   void print_hardware_status(const nlohmann::json& data);
+  void change_to_manual_mode();
   void check_hardware_status();
   void check_heartbeat();
   void update_heartbeat_recv_time(const std::time_t& last_heartbeat_recv_time);

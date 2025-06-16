@@ -75,6 +75,7 @@ enum class TctFuncCodeType
   ChangeTctMode,
   ManualMode,
   AutoMode,
+  StopMode,
   Script,
   Lidar,
   Variable,

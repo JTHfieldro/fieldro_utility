@@ -28,6 +28,7 @@ void frb::TctWebSocket::control(const std::string& str)
   if(cmd == "connect") client_connect();
   else if(cmd == "disconnect") client_disconnect();
   else if(cmd == "status") check_hardware_status();
+  else if(cmd == "manual") change_to_manual_mode();
   _command_map.clear();
 }
 
