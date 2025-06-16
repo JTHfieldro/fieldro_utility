@@ -20,18 +20,6 @@ frb::TctWebSocket::~TctWebSocket()
   }
 }
 
-void frb::TctWebSocket::control(const std::string& str)
-{
-  // std::vector<std::string> input = find_command_target(str, ' ');
-  std::string cmd = parsing_command_map(str, _command_map);
-
-  if(cmd == "connect") client_connect();
-  else if(cmd == "disconnect") client_disconnect();
-  else if(cmd == "status") check_hardware_status();
-  else if(cmd == "manual") change_to_manual_mode();
-  _command_map.clear();
-}
-
 void frb::TctWebSocket::update()
 {
   while(_thread_info->_active)

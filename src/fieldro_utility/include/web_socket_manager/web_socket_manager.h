@@ -1,9 +1,8 @@
-#ifndef WEB_SOCKET_MANAGER_H
-#define WEB_SOCKET_MANAGER_H
+#pragma once
 
 #include "tct_web_socket.h"
 #include "tct_web_socket_define.h"
-#include "ros/ros.h"
+#include "ros_helper.h"
 
 namespace frb
 {
@@ -23,12 +22,10 @@ private:
   std::map<std::string, int32_t> _command_map;
   std::string                    _config_path;
 
+  void set_publisher() override;
+  void publish_hw_status();
   void update();
   void change_mode(const frb::TctFuncCodeType& type);
   void update_hw_status();
-
-  
 };
 }
-
-#endif

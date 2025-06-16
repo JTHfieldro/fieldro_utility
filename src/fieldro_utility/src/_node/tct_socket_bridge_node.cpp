@@ -1,6 +1,6 @@
 #include "global_helper.h"
 #include "logger.h"
-#include "tct_web_socket.h"
+#include "web_socket_manager.h"
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
   frb::Logger* logger = frb::Logger::get("TCT_SOCKET_BRIDGE");
   logger->push_log_format("INFO", "PROC", "Start");
 
-  frb::TctWebSocket* _socket = new frb::TctWebSocket("config/tct_socket_bridge.yaml", logger);
+  frb::WebSocketManager* web_socket_manager = new frb::WebSocketManager("config/tct_socket_bridge.yaml", logger);
 
   while (loop)
   {
@@ -25,11 +25,11 @@ int main()
 
     if (input[0] == "finish") loop = false;
     else if (input[0] == "clear") system("clear");
-    else if (input[0] == "tct_bridge") _socket->control(input[1]);
+    else if (input[0] == "tct_bridge") web_socket_manager->control(input[1]);
   }
 
   logger->push_log_format("INFO", "PROC", "End");
-  safe_delete(_socket);
+  safe_delete(web_socket_manager);
   frb::Logger::destroy();
 
   return 0;

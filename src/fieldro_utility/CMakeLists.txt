@@ -41,8 +41,9 @@ add_executable(tct_web_socket_node
   src/tct_web_socket/tct_web_socket.cpp
   src/tct_web_socket/tct_web_socket_comm.cpp
   src/tct_web_socket/tct_web_socket_connect.cpp
-  src/tct_web_socket/tct_web_socket_state.cpp
-  src/tct_web_socket/tct_web_socket_node.cpp
+  src/web_socket_manager/web_socket_manager.cpp
+  src/web_socket_manager/web_socket_manager_ros_node.cpp
+  src/web_socket_manager/web_socket_manager_action.cpp
 )
 
 target_link_libraries(tct_web_socket_node
