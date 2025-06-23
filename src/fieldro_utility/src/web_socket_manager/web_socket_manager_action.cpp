@@ -36,6 +36,17 @@ void frb::WebSocketManager::update_hw_status()
   }
 }
 
+std::string frb::WebSocketManager::extract_value_from_input(const std::string& input, const std::string& key)
+{
+  size_t pos = input.find(key + "=");
+  if (pos == std::string::npos) return "";
+
+  pos += key.length() + 1;
+  size_t end_pos = input.find(' ', pos);
+  if (end_pos == std::string::npos) return input.substr(pos);
+  else  return input.substr(pos, end_pos - pos);
+}
+
 void frb::WebSocketManager::start_path_navigation(const std::string& node)
 {
   nlohmann::json data = {

@@ -1,0 +1,44 @@
+
+
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Established               
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+16:29:20	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+16:29:57	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+16:29:57	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"manual"}
+16:30:18	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+16:30:18	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+16:30:18	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+16:30:18	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+16:30:18	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+16:30:18	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+16:30:18	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+16:30:18	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             
+
+
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Established               
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+16:31:38	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+16:32:10	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+16:32:10	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+16:32:10	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+16:32:10	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+16:32:10	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+16:32:10	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+16:32:10	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+16:32:10	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             

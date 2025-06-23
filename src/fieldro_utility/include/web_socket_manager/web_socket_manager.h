@@ -29,6 +29,7 @@ private:
   void publish_hw_status(const std::string& status_json);
   void update();
   void update_hw_status();
+  std::string extract_value_from_input(const std::string& input, const std::string& key);
 
   void change_mode(const frb::TctFuncCodeType& type);
   void start_path_navigation(const std::string& node);
