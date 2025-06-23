@@ -28,7 +28,9 @@ private:
   void set_publisher() override;
   void publish_hw_status(const std::string& status_json);
   void update();
-  void change_mode(const frb::TctFuncCodeType& type);
   void update_hw_status();
+
+  void change_mode(const frb::TctFuncCodeType& type);
+  void start_path_navigation(const std::string& node);
 };
 }

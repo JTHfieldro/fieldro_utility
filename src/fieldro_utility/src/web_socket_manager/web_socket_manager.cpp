@@ -33,4 +33,5 @@ void frb::WebSocketManager::control(const std::string& str)
   if(cmd == "manual_mode") change_mode(frb::TctFuncCodeType::ManualMode);
   else if(cmd == "auto_mode") change_mode(frb::TctFuncCodeType::AutoMode);
   else if(cmd == "stop_mode") change_mode(frb::TctFuncCodeType::StopMode);
+  else if(cmd == "start_nav") start_path_navigation(_command_map["start_nav"]);
 }
