@@ -1,0 +1,51 @@
+
+
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+17:17:24	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+17:17:44	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+17:17:44	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"manual"}
+17:21:02	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:21:02	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_02","is_goal_pose_a":0}
+17:21:02	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:21:47	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:21:47	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_02","is_goal_pose_a":0}
+17:21:47	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:22:07	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+17:22:07	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"stop"}
+17:22:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+17:22:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"manual"}
+17:22:46	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:22:46	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_02","is_goal_pose_a":0}
+17:22:46	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:23:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:23:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_03","is_goal_pose_a":0}
+17:23:05	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:24:33	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:24:33	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_03","is_goal_pose_a":0}
+17:24:47	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:24:47	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_01","is_goal_pose_a":0}
+17:25:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:25:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_02","is_goal_pose_a":0}
+17:26:29	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"manual"}
+17:26:47	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:26:47	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_03","is_goal_pose_a":0}
+17:29:22	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:29:22	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_01","is_goal_pose_a":0}
+17:29:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+17:29:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_02","is_goal_pose_a":0}
+17:44:51	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+17:44:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+17:44:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+17:44:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+17:44:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+17:44:52	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+17:44:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+17:44:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             

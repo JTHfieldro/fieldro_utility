@@ -80,23 +80,24 @@ void frb::TctWebSocket::response_message(const std::string& pay_load)
 
     nlohmann::json response = nlohmann::json::parse(std::get<1>(parsing_result));
 
-    if(response.contains("code") && response["code"] != 1)
+    if (response.find("code") != response.end() && response["code"] != 1)
     {
       _logger->push_log_format("WARN", "RECV", "API Failed Code", std::to_string(response["code"].get<int>()));
       return;
     }
 
-    if(response.contains("data") && fn_code_enum == frb::TctFuncCode::GetHardwareStatus)
+    if (response.find("data") != response.end() && fn_code_enum == frb::TctFuncCode::GetHardwareStatus)
     {
       _hw_status = response["data"].dump();
     }
   }
-  catch(const std::exception& e)
+  catch (const std::exception& e)
   {
     _logger->push_log_format("ERROR", "PROC", "Response Parsing Failed", std::string(e.what()));
     _logger->push_log_format("ERROR", "PROC", "Pay Load", pay_load);
   }
 }
+
 
 std::tuple<frb::TctFuncCode, std::string> frb::TctWebSocket::parsing_message(const std::string& pay_load)
 {

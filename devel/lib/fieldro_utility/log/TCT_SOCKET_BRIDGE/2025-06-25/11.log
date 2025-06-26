@@ -1,0 +1,15 @@
+
+
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+11:57:59	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+11:59:51	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+11:59:51	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_01","is_goal_pose_a":0}
+11:59:51	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   

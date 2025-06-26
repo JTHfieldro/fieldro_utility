@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/twinny/fieldro_oriental_motor/devel/lib/python2.7/dist-packages",
+        "/home/twinny/twinny_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages",
+        "/home/twinny/fieldro_utility/devel/lib/python2.7/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/twinny/fieldro_oriental_motor/devel/lib/python2.7/dist-packages",
+        "/home/twinny/twinny_ws/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages",
+        "/home/twinny/fieldro_utility/devel/lib/python2.7/dist-packages"
+    ]
+}

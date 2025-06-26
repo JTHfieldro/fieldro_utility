@@ -1,0 +1,11 @@
+12:00:06	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartPathNav
+12:00:06	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_method":"OAP","driving_option":"","goal_node_name":"target_02","is_goal_pose_a":0}
+12:00:06	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+12:00:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+12:00:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+12:00:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+12:00:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+12:00:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+12:00:52	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+12:00:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+12:00:52	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             

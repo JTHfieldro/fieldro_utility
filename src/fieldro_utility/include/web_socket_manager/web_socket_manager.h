@@ -3,6 +3,7 @@
 #include <nlohmann/json.hpp>
 #include "tct_web_socket.h"
 #include "tct_web_socket_define.h"
+#include "node_define.h"
 #include "ros_helper.h"
 #include "fieldro_utility/hw_status.h"
 
@@ -23,15 +24,15 @@ private:
   frb::TctWebSocket*             _tct_ws;
   std::map<std::string, int32_t> _command_map;
   std::string                    _config_path;
+  std::string                    _mode;
 
   void set_subscriber() override;
   void set_publisher() override;
   void publish_hw_status(const std::string& status_json);
   void update();
   void update_hw_status();
-  std::string extract_value_from_input(const std::string& input, const std::string& key);
 
   void change_mode(const frb::TctFuncCodeType& type);
-  void start_path_navigation(const std::string& node);
+  void start_path_navigation(const NodeList& node);
 };
 }

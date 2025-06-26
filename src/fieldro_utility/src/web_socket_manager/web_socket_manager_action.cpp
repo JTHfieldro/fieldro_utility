@@ -9,18 +9,21 @@ void frb::WebSocketManager::change_mode(const frb::TctFuncCodeType& type)
     {
       data["key_state"] = "manual";
       _tct_ws->send_message(frb::TctFuncCode::SetOperationMode, data);
+      _mode = "manual";
       break;
     }
     case frb::TctFuncCodeType::AutoMode:
     {
       data["key_state"] = "auto";
       _tct_ws->send_message(frb::TctFuncCode::SetOperationMode, data);
+      _mode = "auto";
       break;
     }
     case frb::TctFuncCodeType::StopMode:
     {
       data["key_state"] = "stop";
       _tct_ws->send_message(frb::TctFuncCode::SetOperationMode, data);
+      _mode = "stop";
       break;
     }
   }
@@ -36,23 +39,12 @@ void frb::WebSocketManager::update_hw_status()
   }
 }
 
-std::string frb::WebSocketManager::extract_value_from_input(const std::string& input, const std::string& key)
-{
-  size_t pos = input.find(key + "=");
-  if (pos == std::string::npos) return "";
-
-  pos += key.length() + 1;
-  size_t end_pos = input.find(' ', pos);
-  if (end_pos == std::string::npos) return input.substr(pos);
-  else  return input.substr(pos, end_pos - pos);
-}
-
-void frb::WebSocketManager::start_path_navigation(const std::string& node)
+void frb::WebSocketManager::start_path_navigation(const NodeList& node)
 {
   nlohmann::json data = {
     {"driving_method", "OAP"},           // 주행 방식
     {"driving_option", ""},              // 자율 주행 경로 계획 방식
-    {"goal_node_name", node},            // 목표 Node
+    {"goal_node_name", node_to_string(node)},            // 목표 Node
     {"is_goal_pose_a", 0}                // 정차 후 방향 설정 여부
   };
 

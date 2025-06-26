@@ -33,10 +33,5 @@ void frb::WebSocketManager::control(const std::string& str)
   if(cmd == "manual_mode") change_mode(frb::TctFuncCodeType::ManualMode);
   else if(cmd == "auto_mode") change_mode(frb::TctFuncCodeType::AutoMode);
   else if(cmd == "stop_mode") change_mode(frb::TctFuncCodeType::StopMode);
-  else if(cmd == "start_nav")
-  {
-    std::string node_name = extract_value_from_input(str, "start_nav");
-    if (!node_name.empty()) start_path_navigation(node_name);
-    else _logger->push_log("ERROR", "No node name provided for start_nav");
-  }
+  else if(cmd == "path_nav") start_path_navigation(static_cast<NodeList>(_command_map.find("node")->second));
 }
