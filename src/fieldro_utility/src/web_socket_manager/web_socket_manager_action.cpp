@@ -26,6 +26,18 @@ void frb::WebSocketManager::change_mode(const frb::TctFuncCodeType& type)
       _mode = "stop";
       break;
     }
+    case frb::TctFuncCodeType::TeachingMode:
+    {
+      _tct_ws->send_message_no_data(frb::TctFuncCode::SwitchToTeaching);
+      _mode = "teaching";
+      break;
+    }
+    case frb::TctFuncCodeType::JogMode:
+    {
+      _tct_ws->send_message_no_data(frb::TctFuncCode::SwitchToJog);
+      _mode = "jog";
+      break;
+    }
   }
 }
 
@@ -41,11 +53,13 @@ void frb::WebSocketManager::update_hw_status()
 
 void frb::WebSocketManager::start_path_navigation(const NodeList& node)
 {
+  if(_mode != "teaching") change_mode(frb::TctFuncCodeType::TeachingMode);
+  
   nlohmann::json data = {
-    {"driving_method", "OAP"},           // 주행 방식
-    {"driving_option", ""},              // 자율 주행 경로 계획 방식
-    {"goal_node_name", node_to_string(node)},            // 목표 Node
-    {"is_goal_pose_a", 0}                // 정차 후 방향 설정 여부
+    {"driving_method", "OAP"},                 // 주행 방식
+    {"driving_option", ""},                    // 자율 주행 경로 계획 방식
+    {"goal_node_name", node_to_string(node)},  // 목표 Node
+    {"is_goal_pose_a", 0}                      // 정차 후 방향 설정 여부
   };
 
   _tct_ws->send_message(TctFuncCode::StartPathNav, data);

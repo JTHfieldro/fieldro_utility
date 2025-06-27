@@ -76,6 +76,8 @@ enum class TctFuncCodeType
   ManualMode,
   AutoMode,
   StopMode,
+  TeachingMode,
+  JogMode,
   Script,
   Lidar,
   Variable,
