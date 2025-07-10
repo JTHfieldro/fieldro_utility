@@ -1,0 +1,16 @@
+
+
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Established               
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+17:24:27	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+17:24:51	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+17:24:51	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"manual"}
+17:25:03	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SwitchToJog

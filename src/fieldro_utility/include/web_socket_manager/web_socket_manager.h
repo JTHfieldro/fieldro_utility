@@ -6,6 +6,7 @@
 #include "node_define.h"
 #include "ros_helper.h"
 #include "fieldro_utility/hw_status.h"
+#include "fieldro_utility/engine_status.h"
 
 namespace frb
 {
@@ -19,7 +20,9 @@ public:
   void control(const std::string& str);
 
 private:
+  Logger*                        _logger;
   ros::Publisher                 _publish_hw_status;
+  ros::Publisher                 _publish_engine_status;
   ThreadActionInfo*              _thread_info;
   frb::TctWebSocket*             _tct_ws;
   std::map<std::string, int32_t> _command_map;
@@ -29,10 +32,13 @@ private:
   void set_subscriber() override;
   void set_publisher() override;
   void publish_hw_status(const std::string& status_json);
+  void publish_engine_status(const std::string& status_json);
   void update();
   void update_hw_status();
+  void update_engine_status();
 
   void change_mode(const frb::TctFuncCodeType& type);
   void start_path_navigation(const NodeList& node);
+  void control_jog();
 };
 }

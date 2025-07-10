@@ -21,6 +21,7 @@ public:
   void        send_message_no_data(const TctFuncCode& function_code);
   bool        send_message(const TctFuncCode& function_code, const nlohmann::json& data);
   const std::string& get_hw_status() const { return _hw_status; }
+  const std::string& get_engine_status() const { return _engine_status; }
 
 private:
   ThreadActionInfo* _thread_info;
@@ -30,6 +31,7 @@ private:
   bool           _is_initialization_finish;
   uint32_t       _sequence_number;
   std::string    _hw_status;
+  std::string    _engine_status;
 
   void update();
   void initialize();

@@ -51,6 +51,16 @@ void frb::WebSocketManager::update_hw_status()
   }
 }
 
+void frb::WebSocketManager::update_engine_status()
+{
+  _tct_ws->send_message_no_data(frb::TctFuncCode::GetEngineStatus);
+  std::string status = _tct_ws->get_engine_status();
+  if(!status.empty())
+  {
+    publish_engine_status(status);
+  }
+}
+
 void frb::WebSocketManager::start_path_navigation(const NodeList& node)
 {
   if(_mode != "teaching") change_mode(frb::TctFuncCodeType::TeachingMode);
@@ -63,4 +73,68 @@ void frb::WebSocketManager::start_path_navigation(const NodeList& node)
   };
 
   _tct_ws->send_message(TctFuncCode::StartPathNav, data);
+}
+
+void frb::WebSocketManager::control_jog()
+{
+  termios oldt;
+  termios newt;
+  tcgetattr(STDIN_FILENO, &oldt);
+  newt = oldt;
+  newt.c_lflag &= ~(ICANON | ECHO);
+  tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+
+  _logger->push_log_format("INFO", "PROC", "press 'w', 'a', 's', 'd' to control jog");
+
+  bool loop = true;
+  while(loop)
+  {
+    if(frb::check_std_in(100000))
+    {
+      char ch;
+      if(read(STDIN_FILENO, &ch, 1) > 0)
+      {
+        nlohmann::json data;
+        if(ch == 'w')
+        {
+          data = {
+            {"input_type", "button"},
+            {"motion_type", "forward"},
+            {"speed_level", "low"}
+          };
+        }
+        else if(ch == 'a')
+        {
+          data = {
+            {"input_type", "button"},
+            {"motion_type", "ccw"},
+            {"speed_level", "low"}
+          };
+        }
+        else if(ch == 'd')
+        {
+          data = {
+            {"input_type", "button"},
+            {"motion_type", "cw"},
+            {"speed_level", "low"}
+          };
+        }
+        else if(ch == 'x')
+        {
+          data = {
+            {"input_type", "button"},
+            {"motion_type", "backward"},
+            {"speed_level", "low"}
+          };
+        }
+        else if(ch == 'o')
+        {
+          loop = false;
+        }
+        _tct_ws->send_message(frb::TctFuncCode::ControlJog, data);
+      }
+    }
+  }
+
+  tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 }

@@ -13,6 +13,7 @@ find_package(YAML-CPP REQUIRED)
 add_message_files(
   FILES
   hw_status.msg
+  engine_status.msg
 )
 
 generate_messages(

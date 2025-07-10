@@ -58,3 +58,47 @@ void frb::WebSocketManager::publish_hw_status(const std::string& status_json)
 
   _publish_hw_status.publish(msg);
 }
+
+void frb::WebSocketManager::publish_engine_status(const std::string& status_json)
+{
+  fieldro_utility::engine_status msg;
+
+  // 기본 값 설정
+  msg.autonomous_time                              = "UNKNOWN";
+  msg.autonomous_receiver_status                   = "UNKNOWN";
+  msg.autonomous_current_main                      = "UNKNOWN";
+  msg.autonomous_current_main_state                = "UNKNOWN";
+  msg.autonomous_current_util                      = "UNKNOWN";
+  msg.autonomous_current_util_state                = "UNKNOWN";
+  msg.autonomous_current_event                     = "UNKNOWN";
+  msg.autonomous_current_event_time                = "UNKNOWN";
+
+  try
+  {
+    // get_engine_status() 에서 전달되는 문자열은 data 객체만 포함한다
+    const auto data = nlohmann::json::parse(status_json);
+
+    msg.autonomous_time =
+        data.value("autonomous_time", msg.autonomous_time);
+    msg.autonomous_receiver_status =
+        data.value("autonomous_receiver_status", msg.autonomous_receiver_status);
+    msg.autonomous_current_main =
+        data.value("autonomous_current_main", msg.autonomous_current_main);
+    msg.autonomous_current_main_state =
+        data.value("autonomous_current_main_state", msg.autonomous_current_main_state);
+    msg.autonomous_current_util =
+        data.value("autonomous_current_util", msg.autonomous_current_util);
+    msg.autonomous_current_util_state =
+        data.value("autonomous_current_util_state", msg.autonomous_current_util_state);
+    msg.autonomous_current_event =
+        data.value("autonomous_current_event", msg.autonomous_current_event);
+    msg.autonomous_current_event_time =
+        data.value("autonomous_current_event_time", msg.autonomous_current_event_time);
+  }
+  catch(const std::exception&)
+  {
+    // JSON 파싱 오류 시 기본값 사용
+  }
+
+  _publish_engine_status.publish(msg);
+}

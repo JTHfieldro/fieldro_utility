@@ -90,6 +90,11 @@ void frb::TctWebSocket::response_message(const std::string& pay_load)
     {
       _hw_status = response["data"].dump();
     }
+
+    if (response.find("data") != response.end() && fn_code_enum == frb::TctFuncCode::GetEngineStatus)
+    {
+      _engine_status = response["data"].dump();
+    }
   }
   catch (const std::exception& e)
   {
@@ -97,7 +102,6 @@ void frb::TctWebSocket::response_message(const std::string& pay_load)
     _logger->push_log_format("ERROR", "PROC", "Pay Load", pay_load);
   }
 }
-
 
 std::tuple<frb::TctFuncCode, std::string> frb::TctWebSocket::parsing_message(const std::string& pay_load)
 {
