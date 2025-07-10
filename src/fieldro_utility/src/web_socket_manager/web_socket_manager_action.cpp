@@ -89,7 +89,7 @@ void frb::WebSocketManager::control_jog()
   bool loop = true;
   while(loop)
   {
-    if(frb::check_std_in(100000))
+    if(frb::check_std_in(100))
     {
       char ch;
       if(read(STDIN_FILENO, &ch, 1) > 0)

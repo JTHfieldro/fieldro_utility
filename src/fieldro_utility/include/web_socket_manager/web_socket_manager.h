@@ -28,6 +28,7 @@ private:
   std::map<std::string, int32_t> _command_map;
   std::string                    _config_path;
   std::string                    _mode;
+  bool                           _is_jog_control;
 
   void set_subscriber() override;
   void set_publisher() override;

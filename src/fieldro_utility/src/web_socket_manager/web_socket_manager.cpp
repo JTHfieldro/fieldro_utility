@@ -1,7 +1,7 @@
 #include "web_socket_manager.h"
 
 frb::WebSocketManager::WebSocketManager(const std::string& config_path, frb::Logger* logger)
-  : RosHelper(logger), _config_path(config_path)
+  : RosHelper(logger), _logger(logger), _config_path(config_path)
 {
   _tct_ws = new frb::TctWebSocket(config_path, logger);
   _thread_info = new ThreadActionInfo(_config_path);
@@ -13,6 +13,7 @@ frb::WebSocketManager::WebSocketManager(const std::string& config_path, frb::Log
 frb::WebSocketManager::~WebSocketManager()
 {
   safe_delete(_tct_ws);
+  safe_delete(_thread_info);
 }
 
 void frb::WebSocketManager::update()
