@@ -22,7 +22,7 @@ public:
 
 private:
   Logger*                        _logger;
-  WebSocketResponseManager* _response_manager;
+  WebSocketResponseManager*      _response_manager;
   ros::Publisher                 _publish_hw_status;
   ros::Publisher                 _publish_engine_status;
   ThreadActionInfo*              _thread_info;

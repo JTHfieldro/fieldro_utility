@@ -3,9 +3,9 @@
 frb::WebSocketManager::WebSocketManager(const std::string& config_path, frb::Logger* logger)
   : RosHelper(logger), _logger(logger), _config_path(config_path)
 {
-  _tct_ws = new frb::TctWebSocket(config_path, logger);
-  _thread_info = new ThreadActionInfo(_config_path);
   _response_manager = new WebSocketResponseManager();
+  _tct_ws = new frb::TctWebSocket(config_path, logger, _response_manager);
+  _thread_info = new ThreadActionInfo(_config_path);
   _thread_info->_active = true;
   _thread_info->_thread = std::thread(std::bind(&WebSocketManager::update, this));
   initialize_ros_node("tct_socket_bidge");
@@ -14,6 +14,7 @@ frb::WebSocketManager::WebSocketManager(const std::string& config_path, frb::Log
 frb::WebSocketManager::~WebSocketManager()
 {
   safe_delete(_tct_ws);
+  safe_delete(_response_manager);
   safe_delete(_thread_info);
 }
 

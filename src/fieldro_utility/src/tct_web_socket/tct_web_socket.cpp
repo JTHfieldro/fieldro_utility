@@ -1,9 +1,11 @@
 #include "tct_web_socket.h"
 #include <iostream>
 
-frb::TctWebSocket::TctWebSocket(const std::string& config_path, Logger* logger)
+frb::TctWebSocket::TctWebSocket(const std::string& config_path, Logger* logger, 
+                                 WebSocketResponseManager* response_manager)
   : frb::WebSocketBase(config_path, logger), _config_path(config_path)
 {
+  _response_manager = response_manager;
   initialize();
   load_option(config_path);
 }
@@ -42,7 +44,10 @@ void frb::TctWebSocket::initialize()
 {
   initialize_client();
   _thread_info = new ThreadActionInfo(_config_path);
-  _response_manager = new WebSocketResponseManager();
+  if(_response_manager == nullptr)
+  {
+    _response_manager = new WebSocketResponseManager();
+  }
   _thread_info->_active = true;
   _thread_info->_thread = std::thread(std::bind(&TctWebSocket::update, this));
 }
