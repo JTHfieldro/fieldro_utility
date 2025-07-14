@@ -3,6 +3,7 @@
 #include <nlohmann/json.hpp>
 #include "tct_web_socket.h"
 #include "tct_web_socket_define.h"
+#include "web_socket_response_manager.h"
 #include "node_define.h"
 #include "ros_helper.h"
 #include "fieldro_utility/hw_status.h"
@@ -21,6 +22,7 @@ public:
 
 private:
   Logger*                        _logger;
+  WebSocketResponseManager* _response_manager;
   ros::Publisher                 _publish_hw_status;
   ros::Publisher                 _publish_engine_status;
   ThreadActionInfo*              _thread_info;
@@ -28,7 +30,6 @@ private:
   std::map<std::string, int32_t> _command_map;
   std::string                    _config_path;
   std::string                    _mode;
-  bool                           _is_jog_control;
 
   void set_subscriber() override;
   void set_publisher() override;
@@ -40,6 +41,8 @@ private:
 
   void change_mode(const frb::TctFuncCodeType& type);
   void start_path_navigation(const NodeList& node);
-  void control_jog();
+  void start_script_navigation(const std::string& script_name);
+  void stop_script_navigation();
+  
 };
 }

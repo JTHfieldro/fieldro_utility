@@ -32,6 +32,7 @@ include_directories(
   include/tct_web_socket
   include/web_socket_base
   include/web_socket_manager
+  include/web_socket_response_manager
   ${catkin_INCLUDE_DIRS}
   /usr/include  # for nlohmann/json.hpp
   /usr/include/websocketpp
@@ -59,6 +60,7 @@ add_executable(tct_web_socket_node
   src/web_socket_manager/web_socket_manager_ros_node.cpp
   src/web_socket_manager/web_socket_manager_action.cpp
   src/web_socket_manager/web_socket_manager_pub.cpp
+  src/web_socket_response_manager/web_socket_response_manager.cpp
 )
 
 target_link_libraries(tct_web_socket_node

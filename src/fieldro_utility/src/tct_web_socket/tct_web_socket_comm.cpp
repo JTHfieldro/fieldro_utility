@@ -85,15 +85,9 @@ void frb::TctWebSocket::response_message(const std::string& pay_load)
       _logger->push_log_format("WARN", "RECV", "API Failed Code", std::to_string(response["code"].get<int>()));
       return;
     }
-
-    if (response.find("data") != response.end() && fn_code_enum == frb::TctFuncCode::GetHardwareStatus)
+    else
     {
-      _hw_status = response["data"].dump();
-    }
-
-    if (response.find("data") != response.end() && fn_code_enum == frb::TctFuncCode::GetEngineStatus)
-    {
-      _engine_status = response["data"].dump();
+      _response_manager->process_message(fn_code_enum, response["data"]);
     }
   }
   catch (const std::exception& e)

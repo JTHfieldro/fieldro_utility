@@ -5,6 +5,7 @@ frb::WebSocketManager::WebSocketManager(const std::string& config_path, frb::Log
 {
   _tct_ws = new frb::TctWebSocket(config_path, logger);
   _thread_info = new ThreadActionInfo(_config_path);
+  _response_manager = new WebSocketResponseManager();
   _thread_info->_active = true;
   _thread_info->_thread = std::thread(std::bind(&WebSocketManager::update, this));
   initialize_ros_node("tct_socket_bidge");
@@ -37,5 +38,4 @@ void frb::WebSocketManager::control(const std::string& str)
   else if(cmd == "teaching_mode") change_mode(frb::TctFuncCodeType::TeachingMode);
   else if(cmd == "jog_mode") change_mode(frb::TctFuncCodeType::JogMode);
   else if(cmd == "path_nav") start_path_navigation(static_cast<NodeList>(_command_map.find("node")->second));
-  else if(cmd == "control_jog") control_jog();
 }

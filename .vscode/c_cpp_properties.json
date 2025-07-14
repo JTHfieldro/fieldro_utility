@@ -12,6 +12,7 @@
                 "${workspaceFolder}/src/fieldro_utility/include/web_socket_base/**",
                 "${workspaceFolder}/src/fieldro_utility/include/tct_web_socket/**",
                 "${workspaceFolder}/src/fieldro_utility/include/web_socket_manager/**",
+                "${workspaceFolder}/src/fieldro_utility/include/web_socket_response_manager/**",
                 "/opt/ros/melodic/include/**",
                 "/home/twinny/twinny_ws/src/twinny_M_IP_060_A01_B01_navigation/twinny_navigation_engine/twinny_localization_core/twinny_amcl/include/**",
                 "/home/twinny/twinny_ws/src/twinny_M_IP_060_A01_B01_navigation/twinny_M_IP_060_A01_B01_hardware_driver/can_sending/include/**",
