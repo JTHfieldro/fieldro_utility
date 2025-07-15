@@ -102,3 +102,25 @@ void frb::WebSocketManager::publish_engine_status(const std::string& status_json
 
   _publish_engine_status.publish(msg);
 }
+
+void frb::WebSocketManager::publish_alarm_status(const std::string& status_json)
+{
+  fieldro_utility::alarm_status msg;
+
+  // 기본 값 설정
+  msg.info = "NONE";
+
+  try
+  {
+    // get_alarm_status() 에서 전달되는 문자열은 data 객체만 포함한다
+    const auto data = nlohmann::json::parse(status_json);
+
+    msg.info = data.value("info", msg.info);
+  }
+  catch(const std::exception&)
+  {
+    // JSON 파싱 오류 시 기본값 사용
+  }
+
+  _publish_alarm_status.publish(msg);
+}

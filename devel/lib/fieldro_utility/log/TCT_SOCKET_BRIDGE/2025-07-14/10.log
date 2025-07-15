@@ -1,8 +1,0 @@
-10:13:11	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
-10:13:11	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
-10:13:11	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
-10:13:11	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
-10:13:11	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
-10:13:11	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
-10:13:11	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
-10:13:11	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             

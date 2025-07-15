@@ -25,7 +25,7 @@ int main()
 
     if (input[0] == "finish") loop = false;
     else if (input[0] == "clear") system("clear");
-    else if (input[0] == "tct_bridge") web_socket_manager->control(input[1]);
+    else if (input[0] == "tct") web_socket_manager->control(input[1]);
   }
 
   logger->push_log_format("INFO", "PROC", "End");

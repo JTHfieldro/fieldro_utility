@@ -24,6 +24,7 @@ void frb::WebSocketManager::update()
   {
     update_hw_status();
     update_engine_status();
+    update_alarm_status();
     // thread 무한 독점을 방지하기 위한 sleep
     std::this_thread::sleep_for(std::chrono::milliseconds(_thread_info->_sleep));
   }
@@ -39,4 +40,10 @@ void frb::WebSocketManager::control(const std::string& str)
   else if(cmd == "teaching_mode") change_mode(frb::TctFuncCodeType::TeachingMode);
   else if(cmd == "jog_mode") change_mode(frb::TctFuncCodeType::JogMode);
   else if(cmd == "path_nav") start_path_navigation(static_cast<NodeList>(_command_map.find("node")->second));
+  else if(cmd == "script_nav") start_script_navigation(static_cast<ScriptList>(_command_map.find("script")->second));
+  else if(cmd == "stop_script_nav") stop_script_navigation();
+  else
+  {
+    _logger->push_log_format("ERROR", "PROC", "Unknown command: ", cmd.c_str());
+  }
 }
