@@ -56,6 +56,7 @@ void frb::WebSocketManager::start_path_navigation(const NodeList& node)
   if(_mode != "teaching") 
   {
     _logger->push_log_format("ERROR", "PROC", "Path navigation can only be started in teaching mode.");
+    return;
   }
 
   nlohmann::json data = {
@@ -88,8 +89,9 @@ void frb::WebSocketManager::start_script_navigation(const ScriptList& script)
   if(_mode != "auto")
   {
     _logger->push_log_format("ERROR", "PROC", "Script navigation can only be started in auto mode.");
+    return;
   }
-  
+
   nlohmann::json data = {
     {"script_name", script_to_string(script)}
   };
@@ -100,4 +102,20 @@ void frb::WebSocketManager::start_script_navigation(const ScriptList& script)
 void frb::WebSocketManager::stop_script_navigation()
 { 
   _tct_ws->send_message_no_data(TctFuncCode::StopScript);
+}
+
+void frb::WebSocketManager::start_docking()
+{
+  if(_mode != "teaching") 
+  {
+    _logger->push_log_format("ERROR", "PROC", "Path navigation can only be started in teaching mode.");
+    return;
+  }
+  
+  nlohmann::json data = {
+    {"marker_id", 10050},
+    {"driving_option", "AUTO_STATIC"}
+  };
+
+  _tct_ws->send_message(TctFuncCode::StartDocking, data);
 }

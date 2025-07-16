@@ -1,0 +1,64 @@
+
+
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Established               
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+17:00:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+17:01:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartDocking
+17:01:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_option":"AUTO_STATIC","marker_id":10050}
+17:01:33	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> CancelNavigation
+17:01:33	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StopScript
+17:01:33	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:01:33	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:01:37	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> CancelNavigation
+17:01:37	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StopScript
+17:01:37	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:01:37	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:02:08	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartDocking
+17:02:08	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_option":"AUTO_STATIC","marker_id":10050}
+17:04:13	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> CancelNavigation
+17:04:13	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StopScript
+17:04:34	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -700000   
+17:04:34	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   
+17:15:31	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+17:15:31	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+17:15:31	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+17:15:31	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+17:15:31	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+17:15:31	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+17:15:31	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+17:15:31	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             
+
+
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Established               
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+17:15:32	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+17:15:54	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartDocking
+17:15:54	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_option":"AUTO_STATIC","marker_id":10050}
+17:17:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+17:17:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"stop"}
+17:18:02	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+17:18:02	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"manual"}
+17:19:04	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartDocking
+17:19:04	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_option":"AUTO_STATIC","marker_id":10050}
+17:19:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StartDocking
+17:19:55	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"driving_option":"AUTO_STATIC","marker_id":10050}
+17:22:06	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> CancelNavigation
+17:22:06	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> StopScript
+17:22:27	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -700000   
+17:22:27	[WARN ] [ TCT_SOCKET_BRIDGE  ] RECV | API Failed Code                      -> -200000   

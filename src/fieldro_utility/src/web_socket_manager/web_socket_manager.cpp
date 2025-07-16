@@ -9,10 +9,12 @@ frb::WebSocketManager::WebSocketManager(const std::string& config_path, frb::Log
   _thread_info->_active = true;
   _thread_info->_thread = std::thread(std::bind(&WebSocketManager::update, this));
   initialize_ros_node("tct_socket_bidge");
+  change_mode(frb::TctFuncCodeType::StopMode);
 }
 
 frb::WebSocketManager::~WebSocketManager()
 {
+  change_mode(frb::TctFuncCodeType::StopMode);
   safe_delete(_tct_ws);
   safe_delete(_response_manager);
   safe_delete(_thread_info);
@@ -40,8 +42,12 @@ void frb::WebSocketManager::control(const std::string& str)
   else if(cmd == "teaching_mode") change_mode(frb::TctFuncCodeType::TeachingMode);
   else if(cmd == "jog_mode") change_mode(frb::TctFuncCodeType::JogMode);
   else if(cmd == "path_nav") start_path_navigation(static_cast<NodeList>(_command_map.find("node")->second));
+  else if(cmd == "pause_path_nav") pause_path_navigation();
+  else if(cmd == "resume_path_nav") resume_path_navigation();
+  else if(cmd == "cancel_path_nav") cancel_path_navigation();
   else if(cmd == "script_nav") start_script_navigation(static_cast<ScriptList>(_command_map.find("script")->second));
   else if(cmd == "stop_script_nav") stop_script_navigation();
+  else if(cmd == "start_docking") start_docking();
   else
   {
     _logger->push_log_format("ERROR", "PROC", "Unknown command: ", cmd.c_str());

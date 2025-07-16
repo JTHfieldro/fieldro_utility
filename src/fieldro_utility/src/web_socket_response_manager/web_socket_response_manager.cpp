@@ -28,8 +28,8 @@ void frb::WebSocketResponseManager::process_message(frb::TctFuncCode function_co
     {
       _alarm_status = data.dump();
     }
-    else 
+    else
     {
-        // Handle other function codes as needed
+      // Handle other function codes as needed
     }
 }
