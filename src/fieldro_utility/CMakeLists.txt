@@ -58,7 +58,6 @@ add_executable(tct_web_socket_node
   src/tct_web_socket/tct_web_socket_connect.cpp
   src/_node/tct_socket_bridge_node.cpp
   src/web_socket_manager/web_socket_manager.cpp
-  src/web_socket_manager/web_socket_manager_ros_node.cpp
   src/web_socket_manager/web_socket_manager_action.cpp
   src/web_socket_manager/web_socket_manager_update.cpp
   src/web_socket_response_manager/web_socket_response_manager.cpp

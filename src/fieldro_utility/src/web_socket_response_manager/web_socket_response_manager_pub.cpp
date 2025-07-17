@@ -21,40 +21,36 @@ void frb::WebSocketResponseManager::publish_hw_status(const nlohmann::json& stat
 
   try
   {
-    // get_hw_status() 에서 전달되는 문자열은 data 객체만 포함한다
-    // const auto data = nlohmann::json::parse(status_json);
-    const auto& data = status_json;
-
     msg.robot_hw_switch_ems_status =
-        data.value("robot_hw_switch_ems_status", msg.robot_hw_switch_ems_status);
+        status_json.value("robot_hw_switch_ems_status", msg.robot_hw_switch_ems_status);
     msg.robot_hw_switch_key_status =
-        data.value("robot_hw_switch_key_status", msg.robot_hw_switch_key_status);
+        status_json.value("robot_hw_switch_key_status", msg.robot_hw_switch_key_status);
     msg.robot_hw_switch_reset_status =
-        data.value("robot_hw_switch_reset_status", msg.robot_hw_switch_reset_status);
+        status_json.value("robot_hw_switch_reset_status", msg.robot_hw_switch_reset_status);
     msg.robot_hw_switch_start_stop_status =
-        data.value("robot_hw_switch_start_stop_status", msg.robot_hw_switch_start_stop_status);
+        status_json.value("robot_hw_switch_start_stop_status", msg.robot_hw_switch_start_stop_status);
     msg.robot_is_charging_status =
-        data.value("robot_is_charging_status", msg.robot_is_charging_status);
+        status_json.value("robot_is_charging_status", msg.robot_is_charging_status);
     msg.robot_is_sensor_stable_depth_front =
-        data.value("robot_is_sensor_stable_depth_front", msg.robot_is_sensor_stable_depth_front);
+        status_json.value("robot_is_sensor_stable_depth_front", msg.robot_is_sensor_stable_depth_front);
     msg.robot_is_sensor_stable_depth_rear =
-        data.value("robot_is_sensor_stable_depth_rear", msg.robot_is_sensor_stable_depth_rear);
+        status_json.value("robot_is_sensor_stable_depth_rear", msg.robot_is_sensor_stable_depth_rear);
     msg.robot_is_sensor_stable_imu =
-        data.value("robot_is_sensor_stable_imu", msg.robot_is_sensor_stable_imu);
+        status_json.value("robot_is_sensor_stable_imu", msg.robot_is_sensor_stable_imu);
     msg.robot_is_sensor_stable_lidar_3d =
-        data.value("robot_is_sensor_stable_lidar_3d", msg.robot_is_sensor_stable_lidar_3d);
+        status_json.value("robot_is_sensor_stable_lidar_3d", msg.robot_is_sensor_stable_lidar_3d);
     msg.robot_is_sensor_stable_lidar_front =
-        data.value("robot_is_sensor_stable_lidar_front", msg.robot_is_sensor_stable_lidar_front);
+        status_json.value("robot_is_sensor_stable_lidar_front", msg.robot_is_sensor_stable_lidar_front);
     msg.robot_is_sensor_stable_lidar_rear =
-        data.value("robot_is_sensor_stable_lidar_rear", msg.robot_is_sensor_stable_lidar_rear);
+        status_json.value("robot_is_sensor_stable_lidar_rear", msg.robot_is_sensor_stable_lidar_rear);
     msg.robot_is_sensor_stable_motor =
-        data.value("robot_is_sensor_stable_motor", msg.robot_is_sensor_stable_motor);
+        status_json.value("robot_is_sensor_stable_motor", msg.robot_is_sensor_stable_motor);
     msg.robot_is_sensor_stable_tof =
-        data.value("robot_is_sensor_stable_tof", msg.robot_is_sensor_stable_tof);
+        status_json.value("robot_is_sensor_stable_tof", msg.robot_is_sensor_stable_tof);
   }
   catch(const std::exception&)
   {
-    // JSON 파싱 오류 시 기본값 사용
+    _logger->push_log_format("ERROR", "JSON", "Failed to parse hardware status JSON", "WebSocketResponseManager");
   }
 
   _publish_hw_status.publish(msg);
@@ -76,30 +72,26 @@ void frb::WebSocketResponseManager::publish_engine_status(const nlohmann::json& 
 
   try
   {
-    // get_engine_status() 에서 전달되는 문자열은 data 객체만 포함한다
-    // const auto data = nlohmann::json::parse(status_json);
-    const auto& data = status_json;
-
     msg.autonomous_time =
-        data.value("autonomous_time", msg.autonomous_time);
+        status_json.value("autonomous_time", msg.autonomous_time);
     msg.autonomous_receiver_status =
-        data.value("autonomous_receiver_status", msg.autonomous_receiver_status);
+        status_json.value("autonomous_receiver_status", msg.autonomous_receiver_status);
     msg.autonomous_current_main =
-        data.value("autonomous_current_main", msg.autonomous_current_main);
+        status_json.value("autonomous_current_main", msg.autonomous_current_main);
     msg.autonomous_current_main_state =
-        data.value("autonomous_current_main_state", msg.autonomous_current_main_state);
+        status_json.value("autonomous_current_main_state", msg.autonomous_current_main_state);
     msg.autonomous_current_util =
-        data.value("autonomous_current_util", msg.autonomous_current_util);
+        status_json.value("autonomous_current_util", msg.autonomous_current_util);
     msg.autonomous_current_util_state =
-        data.value("autonomous_current_util_state", msg.autonomous_current_util_state);
+        status_json.value("autonomous_current_util_state", msg.autonomous_current_util_state);
     msg.autonomous_current_event =
-        data.value("autonomous_current_event", msg.autonomous_current_event);
+        status_json.value("autonomous_current_event", msg.autonomous_current_event);
     msg.autonomous_current_event_time =
-        data.value("autonomous_current_event_time", msg.autonomous_current_event_time);
+        status_json.value("autonomous_current_event_time", msg.autonomous_current_event_time);
   }
   catch(const std::exception&)
   {
-    // JSON 파싱 오류 시 기본값 사용
+    _logger->push_log_format("ERROR", "JSON", "Failed to parse engine status JSON", "WebSocketResponseManager");
   }
 
   _publish_engine_status.publish(msg);
@@ -114,15 +106,11 @@ void frb::WebSocketResponseManager::publish_alarm_status(const nlohmann::json& s
 
   try
   {
-    // get_alarm_status() 에서 전달되는 문자열은 data 객체만 포함한다
-    // const auto data = nlohmann::json::parse(status_json);
-    const auto& data = status_json;
-
-    msg.info = data.value("alarm_list", msg.info);
+    msg.info = status_json.value("alarm_list", msg.info);
   }
   catch(const std::exception&)
   {
-    // JSON 파싱 오류 시 기본값 사용
+    _logger->push_log_format("ERROR", "JSON", "Failed to parse alarm status JSON", "WebSocketResponseManager");
   }
 
   _publish_alarm_status.publish(msg);

@@ -25,6 +25,7 @@ public:
 private:
   ThreadActionInfo* _thread_info;
   WebSocketResponseManager* _response_manager;
+  Logger* _logger;
   std::map<std::string, int32_t> _command_map;
   std::string                    _config_path;
 
