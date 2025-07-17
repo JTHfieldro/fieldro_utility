@@ -22,7 +22,8 @@ void frb::WebSocketResponseManager::publish_hw_status(const nlohmann::json& stat
   try
   {
     // get_hw_status() 에서 전달되는 문자열은 data 객체만 포함한다
-    const auto data = nlohmann::json::parse(status_json);
+    // const auto data = nlohmann::json::parse(status_json);
+    const auto& data = status_json;
 
     msg.robot_hw_switch_ems_status =
         data.value("robot_hw_switch_ems_status", msg.robot_hw_switch_ems_status);
@@ -76,7 +77,8 @@ void frb::WebSocketResponseManager::publish_engine_status(const nlohmann::json& 
   try
   {
     // get_engine_status() 에서 전달되는 문자열은 data 객체만 포함한다
-    const auto data = nlohmann::json::parse(status_json);
+    // const auto data = nlohmann::json::parse(status_json);
+    const auto& data = status_json;
 
     msg.autonomous_time =
         data.value("autonomous_time", msg.autonomous_time);
@@ -113,7 +115,8 @@ void frb::WebSocketResponseManager::publish_alarm_status(const nlohmann::json& s
   try
   {
     // get_alarm_status() 에서 전달되는 문자열은 data 객체만 포함한다
-    const auto data = nlohmann::json::parse(status_json);
+    // const auto data = nlohmann::json::parse(status_json);
+    const auto& data = status_json;
 
     msg.info = data.value("alarm_list", msg.info);
   }

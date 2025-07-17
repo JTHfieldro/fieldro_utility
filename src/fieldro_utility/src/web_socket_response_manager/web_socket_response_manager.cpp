@@ -2,16 +2,22 @@
 
 frb::WebSocketResponseManager::WebSocketResponseManager() 
 {
-  _publish_hw_status     = _nh.advertise<fieldro_utility::hw_status>("hw_status", 10);
-  _publish_engine_status = _nh.advertise<fieldro_utility::engine_status>("engine_status", 10);
-  _publish_alarm_status  = _nh.advertise<fieldro_utility::alarm_status>("alarm_status", 10);
+  initialize();
 }
 
 frb::WebSocketResponseManager::~WebSocketResponseManager() 
 {
+  initialize_ros_node("web_socket_response_manager");
   _publish_hw_status.shutdown();
   _publish_engine_status.shutdown();
   _publish_alarm_status.shutdown();
+}
+
+void frb::WebSocketResponseManager::initialize() 
+{
+  _publish_hw_status     = _nh.advertise<fieldro_utility::hw_status>("hw_status", 10);
+  _publish_engine_status = _nh.advertise<fieldro_utility::engine_status>("engine_status", 10);
+  _publish_alarm_status  = _nh.advertise<fieldro_utility::alarm_status>("alarm_status", 10);
 }
 
 void frb::WebSocketResponseManager::process_message(frb::TctFuncCode function_code, const nlohmann::json& data) 
