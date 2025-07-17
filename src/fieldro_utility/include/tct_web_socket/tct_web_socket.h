@@ -16,8 +16,7 @@ namespace frb {
 class TctWebSocket : public WebSocketBase
 {
 public:
-  TctWebSocket(const std::string& config_path, Logger* logger, 
-               WebSocketResponseManager* response_manager);
+  TctWebSocket(const std::string& config_path, Logger* logger);
   virtual ~TctWebSocket();
 
   void        send_message_no_data(const TctFuncCode& function_code);

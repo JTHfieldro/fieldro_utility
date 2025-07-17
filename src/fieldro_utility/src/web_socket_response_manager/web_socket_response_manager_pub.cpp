@@ -1,6 +1,6 @@
-#include "web_socket_manager.h"
+#include "web_socket_response_manager.h"
 
-void frb::WebSocketManager::publish_hw_status(const std::string& status_json)
+void frb::WebSocketResponseManager::publish_hw_status(const nlohmann::json& status_json) 
 {
   fieldro_utility::hw_status msg;
 
@@ -59,7 +59,7 @@ void frb::WebSocketManager::publish_hw_status(const std::string& status_json)
   _publish_hw_status.publish(msg);
 }
 
-void frb::WebSocketManager::publish_engine_status(const std::string& status_json)
+void frb::WebSocketResponseManager::publish_engine_status(const nlohmann::json& status_json)
 {
   fieldro_utility::engine_status msg;
 
@@ -103,7 +103,7 @@ void frb::WebSocketManager::publish_engine_status(const std::string& status_json
   _publish_engine_status.publish(msg);
 }
 
-void frb::WebSocketManager::publish_alarm_status(const std::string& status_json)
+void frb::WebSocketResponseManager::publish_alarm_status(const nlohmann::json& status_json)
 {
   fieldro_utility::alarm_status msg;
 
@@ -115,7 +115,7 @@ void frb::WebSocketManager::publish_alarm_status(const std::string& status_json)
     // get_alarm_status() 에서 전달되는 문자열은 data 객체만 포함한다
     const auto data = nlohmann::json::parse(status_json);
 
-    msg.info = data.value("info", msg.info);
+    msg.info = data.value("alarm_list", msg.info);
   }
   catch(const std::exception&)
   {

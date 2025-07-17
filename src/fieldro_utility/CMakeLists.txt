@@ -60,9 +60,9 @@ add_executable(tct_web_socket_node
   src/web_socket_manager/web_socket_manager.cpp
   src/web_socket_manager/web_socket_manager_ros_node.cpp
   src/web_socket_manager/web_socket_manager_action.cpp
-  src/web_socket_manager/web_socket_manager_pub.cpp
   src/web_socket_manager/web_socket_manager_update.cpp
   src/web_socket_response_manager/web_socket_response_manager.cpp
+  src/web_socket_response_manager/web_socket_response_manager_pub.cpp
 )
 
 target_link_libraries(tct_web_socket_node
