@@ -8,6 +8,7 @@ frb::WebSocketManager::WebSocketManager(const std::string& config_path, frb::Log
   _thread_info->_active = true;
   _thread_info->_thread = std::thread(std::bind(&WebSocketManager::update, this));
   change_mode(frb::TctFuncCodeType::StopMode);
+  load_localization_option();
 }
 
 frb::WebSocketManager::~WebSocketManager()
@@ -29,6 +30,32 @@ void frb::WebSocketManager::update()
   }
 }
 
+void frb::WebSocketManager::load_localization_option()
+{
+  try {
+    std::ifstream yaml_file("config/localization_option.yaml");
+    YAML::Node yaml = YAML::Load(yaml_file);
+    yaml_file.close();
+
+    std::string config_name = yaml["config_name"].as<std::string>();
+    LOGGER->push_log_format("INFO", "PROC", config_name);
+
+    _localization_map = yaml["map_name"].as<std::string>();
+    _localization_x = yaml["coordinate"]["x"].as<double>();
+    _localization_y = yaml["coordinate"]["y"].as<double>();
+    _localization_theta = yaml["rotation"]["theta"].as<double>();
+  }
+  catch(const YAML::Exception& e) {
+    LOGGER->push_log_format("ERROR", "PROC", "YAML Exception", e.what());
+  }
+  catch(const std::exception& e) {
+    LOGGER->push_log_format("ERROR", "PROC", "Standard Exception", e.what());
+  }
+  catch(...) {
+    LOGGER->push_log_format("ERROR", "PROC", "Unknown Exception");
+  }
+}
+
 void frb::WebSocketManager::control(const std::string& str)
 {
   std::string cmd = parsing_command_map(str, _command_map);
@@ -38,6 +65,7 @@ void frb::WebSocketManager::control(const std::string& str)
   else if(cmd == "stop_mode") change_mode(frb::TctFuncCodeType::StopMode);
   else if(cmd == "teaching_mode") change_mode(frb::TctFuncCodeType::TeachingMode);
   else if(cmd == "jog_mode") change_mode(frb::TctFuncCodeType::JogMode);
+  else if(cmd == "localization") locaalization_robot();
   else if(cmd == "path_nav") start_path_navigation(static_cast<NodeList>(_command_map.find("node")->second));
   else if(cmd == "pause_path_nav") pause_path_navigation();
   else if(cmd == "resume_path_nav") resume_path_navigation();

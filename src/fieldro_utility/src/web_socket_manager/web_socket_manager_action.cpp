@@ -51,6 +51,24 @@ void frb::WebSocketManager::change_mode(const frb::TctFuncCodeType& type)
   }
 }
 
+void frb::WebSocketManager::locaalization_robot()
+{
+  if(_mode != "manual") 
+  {
+    _logger->push_log_format("ERROR", "PROC", "Localization can only be started in manual mode.");
+    return;
+  }
+
+  nlohmann::json data = {
+    {"map_name", _localization_map},  // 로컬라이제이션 맵 이름
+    {"x", _localization_x},            // 로봇의 x 좌표
+    {"y", _localization_y},            // 로봇의 y 좌표
+    {"theta", _localization_theta}     // 로봇의 회전 각도
+  };
+
+  _tct_ws->send_message(frb::TctFuncCode::SetLocalization, data);
+}
+
 void frb::WebSocketManager::start_path_navigation(const NodeList& node)
 {
   if(_mode != "teaching") 

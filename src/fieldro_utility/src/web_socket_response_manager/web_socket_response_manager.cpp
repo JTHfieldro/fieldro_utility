@@ -18,7 +18,6 @@ void frb::WebSocketResponseManager::initialize()
   initialize_ros_node("web_socket_response_manager");
   set_subscriber();
   set_publisher();
-  
 }
 
 void frb::WebSocketResponseManager::set_subscriber() 

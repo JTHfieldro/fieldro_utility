@@ -27,13 +27,19 @@ private:
   std::map<std::string, int32_t> _command_map;
   std::string                    _config_path;
   std::string                    _mode;
+  std::string                    _localization_map;
+  double                         _localization_x;
+  double                         _localization_y;
+  double                         _localization_theta;
 
   void update();
   void update_hw_status();
   void update_engine_status();
   void update_alarm_status();
+  void load_localization_option();
 
   void change_mode(const frb::TctFuncCodeType& type);
+  void locaalization_robot();
   void start_path_navigation(const NodeList& node);
   void pause_path_navigation();
   void resume_path_navigation();

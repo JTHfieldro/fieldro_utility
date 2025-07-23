@@ -1,0 +1,10 @@
+config_name : LOCALIZATION_OPTION_CONFIG
+
+map_name: "fieldro_office"
+
+coordinate:
+  x: -0.59
+  y: -0.71
+
+rotation:
+  theta: -1.57
