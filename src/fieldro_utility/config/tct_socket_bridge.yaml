@@ -1,0 +1,11 @@
+config_name: TCT_SOCKET_BRIDGE_OPTION_CONFIG
+
+thread:
+  hz: 10
+
+server_info:
+  ip: 127.0.0.1
+  port: 5435
+
+connection:
+  retry_turm: 2

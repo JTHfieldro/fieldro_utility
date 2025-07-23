@@ -1,0 +1,25 @@
+
+
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Established               
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+11:01:40	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+11:01:48	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+11:01:48	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"manual"}
+11:02:09	[ERROR] [ TCT_SOCKET_BRIDGE  ] PROC | Path navigation can only be started in teaching mode.
+11:02:22	[ERROR] [ TCT_SOCKET_BRIDGE  ] PROC | Unknown command:                     -> teaching_mode
+11:02:26	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+11:02:26	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+11:02:26	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+11:02:26	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+11:02:26	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+11:02:26	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+11:02:26	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+11:02:26	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             

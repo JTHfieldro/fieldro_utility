@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="fieldro_utility" type="tct_web_socket_node" name="tct_web_socket_node" output="screen">
+    <param name="config_path" value="$(find fieldro_utility)/config/tct_socket_bridge.yaml"/>
+  </node>
+</launch>

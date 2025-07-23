@@ -1,0 +1,10 @@
+/build
+/.catkin_tools
+# devel 디렉토리의 모든 내용을 무시
+/devel/* 
+# 하지만 lib 디렉토리는 무시에서 제외
+!/devel/lib
+# devel/lib 디렉토리의 모든 내용을 무시
+/devel/lib/*
+# 하지만 fieldro_utility 디렉토리는 무시에서 제외
+!/devel/lib/fieldro_utility

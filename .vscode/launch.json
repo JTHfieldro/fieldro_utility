@@ -1,0 +1,140 @@
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "name": "ROS Node Debug",
+//       "type": "cppdbg",
+//       "request": "launch",
+//       "program": "${workspaceFolder}/devel/lib/${input:packageName}/${input:nodeName}",
+//       "args": [],
+//       "stopAtEntry": true,
+//       "cwd": "${workspaceFolder}",
+//       // "sourceFileMap": {
+//       //   "${workspaceFolder}/build/tct_web_socket_package": "${workspaceFolder}/src/tct_web_socket_package"
+//       //   // "/build/path": "${workspaceFolder}",
+//       //   // "${workspaceFolder}/build": "${workspaceFolder}/build",
+//       //   // "${workspaceFolder}/devel": "${workspaceFolder}/devel"
+//       // },
+//       "sourceFileMap": {
+//         "/home/twinny/fieldro_utility/src": "${workspaceFolder}/src"
+//       },
+//       "environment": [
+//         {
+//           "name": "ROS_MASTER_URI",
+//           "value": "http://localhost:11311"
+//         }
+//       ],
+//       "externalConsole": false,
+//       "MIMode": "gdb",
+//       "setupCommands": [
+//         {
+//           "description": "Enable pretty-printing for gdb",
+//           "text": "-enable-pretty-printing",
+//           "ignoreFailures": true
+//         },
+//         {
+//           "description": "Set source path",
+//           "text": "directory ${workspaceFolder}/src/${input:packageName}/src:${workspaceFolder}/src/${input:packageName}/include",
+//           "ignoreFailures": true
+//         }
+//       ],
+//       // "preLaunchTask": "catkin_make: build",
+//       "miDebuggerPath": "/usr/bin/gdb",
+//     }
+//   ],
+//   "inputs": [
+//     {
+//       "id": "packageName",
+//       "type": "promptString",
+//       "description": "Enter the name of the ROS package",
+//       "default": "fieldro_utility"
+//     },
+//     {
+//       "id": "nodeName",
+//       "type": "promptString",
+//       "description": "Enter the name of the node to debug",
+//       // "default": "fpp_controller_node"
+//       // "default": "tcp_socket_bridge_node"
+//       // "default": "tct_node_manager_node"
+//       "default": "tct_web_socket_node"
+//     }
+//   ]
+// }
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       // 디버그 설정 이름 : VSCode에서 디버그 설정을 선택 할 때 표시되는 이름
+//       "name": "ROS: Launch",      
+//       // 이 설정이 실행 요청임을 나타 냄 즉 디버그 모드에서 프로그램을 시작 할 때 사용
+//       "request": "launch",        
+//       // 실행 할 ros launch 경로 (package가 변경 되거나 할 때 변경 되어야 한다.)
+//       "target": "${workspaceFolder}/src/fieldro_utility/launch/fieldro_utility.launch",
+//       // 런치 파일을 실행 할 때 함께 실행 될 프로그램 목록
+//       "launch": [
+//         "rviz",       
+//         "gz",
+//         "gzclient",
+//         "gzserver"
+//       ],
+//       // ros 디버깅 설정 유형을 지정. 이 경우 ros 유형임을 나타냄
+//       "type": "ros",
+//       // 디버그 세션을 시작하기 전에 실행 할 작업을 지정
+//       // 이 경우 catkin_make 빌드 작업을 수행
+//       "preLaunchTask": "catkin_make: build",        // catkin_make 빌드 작업을 수행
+//     }
+//   ]
+// }
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ROS Node Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/devel/lib/${input:packageName}/${input:nodeName}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "sourceFileMap": {
+        "/home/twinny/fieldro_utility/src": "${workspaceFolder}/src"
+      },
+      "environment": [
+        {
+          "name": "ROS_MASTER_URI",
+          "value": "http://localhost:11311"
+        }
+      ],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set source path",
+          "text": "directory ${workspaceFolder}/src/${input:packageName}/src:${workspaceFolder}/src/${input:packageName}/include",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "catkin_make: build"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "packageName",
+      "type": "promptString",
+      "description": "Enter the name of the ROS package",
+      "default": "fieldro_utility"
+    },
+    {
+      "id": "nodeName",
+      "type": "promptString",
+      "description": "Enter the name of the node to debug",
+      "default": "tct_web_socket_node"
+    }
+  ]
+}

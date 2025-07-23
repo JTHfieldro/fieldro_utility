@@ -1,0 +1,45 @@
+15:22:30	[ERROR] [      DEFAULT       ] PROC | YAML Exception                       -> yaml-cpp: error at line 0, column 0: bad conversion
+15:22:30	[INFO ] [      DEFAULT       ] PROC | Attempting to Connect Server         
+15:22:30	[ERROR] [      DEFAULT       ] PROC | Connection Initialization Error      -> invalid uri
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+15:25:38	[ERROR] [      DEFAULT       ] PROC | YAML Exception                       -> yaml-cpp: error at line 0, column 0: bad conversion
+15:25:38	[INFO ] [      DEFAULT       ] PROC | Attempting to Connect Server         
+15:25:38	[ERROR] [      DEFAULT       ] PROC | Connection Initialization Error      -> invalid uri
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
+WebSocket not connected.
