@@ -131,9 +131,14 @@ void frb::WebSocketManager::start_docking()
   }
   
   nlohmann::json data = {
-    {"marker_id", 10050},
+    {"marker_id", _marker_id},
     {"driving_option", "AUTO_STATIC"}
   };
 
   _tct_ws->send_message(TctFuncCode::StartDocking, data);
+}
+
+void frb::WebSocketManager::reset_alarm()
+{
+  _tct_ws->send_message_no_data(TctFuncCode::ResetAlarm);
 }

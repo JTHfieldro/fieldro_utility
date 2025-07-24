@@ -1,0 +1,34 @@
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"stop"}
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+10:01:05	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+10:01:05	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             
+
+
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Start                                
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Client Initialization     
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ROS Node Initialized                 
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Attempting to Connect Server         -> ws://127.0.0.1:5435
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | TCT_SOCKET_BRIDGE_OPTION_CONFIG      
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | LOCALIZATION_OPTION_CONFIG           
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Host               -> 127.0.0.1 
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC |                   Port               -> 5435      
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Message                              -> Success   
+10:40:01	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Remote IP                            -> 127.0.0.1:5435
+10:40:12	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> ResetAlarm
+10:40:15	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | End                                  
+10:40:15	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Function Code                   -> SetOperationMode
+10:40:15	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Send Data                            -> {"key_state":"stop"}
+10:40:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Connection Closed                    
+10:40:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Code                           -> 1000      
+10:40:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Waiting for ASIO Thread to Finish    
+10:40:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Close Reason                         -> Closing connection
+10:40:16	[WARN ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Still Running, Deferring end_point Cleanup
+10:40:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | ASIO Thread Terminated Successfully  
+10:40:16	[INFO ] [ TCT_SOCKET_BRIDGE  ] PROC | Success to Disconnection             

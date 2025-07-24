@@ -41,6 +41,7 @@ void frb::WebSocketManager::load_localization_option()
     LOGGER->push_log_format("INFO", "PROC", config_name);
 
     _localization_map = yaml["map_name"].as<std::string>();
+    _marker_id = yaml["marker_id"].as<int32_t>();
     _localization_x = yaml["coordinate"]["x"].as<double>();
     _localization_y = yaml["coordinate"]["y"].as<double>();
     _localization_theta = yaml["rotation"]["theta"].as<double>();
@@ -73,6 +74,7 @@ void frb::WebSocketManager::control(const std::string& str)
   else if(cmd == "script_nav") start_script_navigation(static_cast<ScriptList>(_command_map.find("script")->second));
   else if(cmd == "stop_script_nav") stop_script_navigation();
   else if(cmd == "start_docking") start_docking();
+  else if(cmd == "reset_alarm") reset_alarm();
   else
   {
     _logger->push_log_format("ERROR", "PROC", "Unknown command: ", cmd.c_str());

@@ -28,6 +28,7 @@ private:
   std::string                    _config_path;
   std::string                    _mode;
   std::string                    _localization_map;
+  int32_t                        _marker_id;
   double                         _localization_x;
   double                         _localization_y;
   double                         _localization_theta;
@@ -47,5 +48,6 @@ private:
   void start_script_navigation(const ScriptList& script);
   void stop_script_navigation();
   void start_docking();
+  void reset_alarm();
 };
 }

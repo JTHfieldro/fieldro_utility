@@ -1,10 +1,16 @@
 config_name : LOCALIZATION_OPTION_CONFIG
 
+# 위치추정 실행 맵
 map_name: "fieldro_office"
 
+# 도킹(충전 스테이션) aruko_marker ID
+marker_id: 10050
+
+# 위치추정 좌표
 coordinate:
   x: -0.59
   y: -0.71
 
+# 위치추정 로봇의 방향
 rotation:
   theta: -1.57
